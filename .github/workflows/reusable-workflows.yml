@@ -1,0 +1,22 @@
+name: Reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+
+jobs:
+  example_job:
+    name: Pass input and secrets to my-action
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "username: ${{ inputs.username }}"
+          echo "token: ${{ secrets.token }}"
+          echo "secrets1: ${{ secrets.secrets1 }}"
+          echo "secrets2: ${{ env.secrets2 }}"
