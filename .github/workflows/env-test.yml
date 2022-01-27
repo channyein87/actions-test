@@ -15,6 +15,7 @@ jobs:
       - run: echo "secrets2=ap-southeast-2" >> $GITHUB_ENV
     
   job1:
+    needs: [env]
     uses: ./.github/workflows/reusable-workflows.yml
     with:
       username: chan
