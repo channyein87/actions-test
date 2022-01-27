@@ -8,10 +8,12 @@ on:
     branches:
       - main
 
-env:
-  secrets2: ap-southeast-2
-
 jobs:
+  env:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "secrets2=ap-southeast-2" >> $GITHUB_ENV
+    
   job1:
     uses: ./.github/workflows/reusable-workflows.yml
     with:
