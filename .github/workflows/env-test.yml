@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  secrets2: ${{ env.GITHUB_REPOSITORY_OWNER }}
+  secrets2: ap-southeast-2
 
 jobs:
   job1:
